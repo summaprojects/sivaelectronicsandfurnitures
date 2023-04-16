@@ -1,0 +1,54 @@
+let slideIndex3 = 0;
+let slideshowPaused3 = false; // flag variable to keep track of slideshow state
+let slideTimeout3; // variable to hold the timeout ID
+showSlides3();
+function showSlides3() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides3");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex3++;
+  if (slideIndex3 > slides.length) {
+    slideIndex3 = 1;
+  }
+  slides[slideIndex3 - 1].style.display = "block";
+  // check flag variable to determine whether to continue or pause slideshow
+  if (!slideshowPaused3) {
+    slideTimeout3 = setTimeout(showSlides3, 3000);
+  }
+}
+document.getElementById("open-slide7").addEventListener("click", function() {
+  clearTimeout(slideTimeout3); // stop the current slideshow timeout
+  slideshowPaused3 = true;
+  // update slideIndex3 so that paused slide becomes first slide
+  slideIndex3 = Array.from(document.getElementsByClassName("mySlides3")).indexOf(document.querySelector(".mySlides3:not([style*='display: none'])"));
+});
+document.getElementById("close-slide7").addEventListener("click", function() {
+  slideshowPaused3 = false;
+  showSlides3();
+});
+document.getElementById("open-slide8").addEventListener("click", function() {
+  clearTimeout(slideTimeout3); // stop the current slideshow timeout
+  slideshowPaused3 = true;
+  // update slideIndex3 so that paused slide becomes first slide
+  slideIndex3 = Array.from(document.getElementsByClassName("mySlides3")).indexOf(document.querySelector(".mySlides3:not([style*='display: none'])"));
+});
+document.getElementById("close-slide8").addEventListener("click", function() {
+  slideshowPaused3 = false;
+  showSlides3();
+});
+document.getElementById("open-slide9").addEventListener("click", function() {
+  clearTimeout(slideTimeout3); // stop the current slideshow timeout
+  slideshowPaused3 = true;
+  // update slideIndex3 so that paused slide becomes first slide
+  slideIndex3 = Array.from(document.getElementsByClassName("mySlides3")).indexOf(document.querySelector(".mySlides3:not([style*='display: none'])"));
+});
+document.getElementById("close-slide9").addEventListener("click", function() {
+  slideshowPaused3 = false;
+  showSlides3();
+});
+// Load the fancy window content after the pre-loader effect is visible
+$(document).ready(function() {
+  $('.m3').addClass('loaded');
+});
