@@ -86,7 +86,7 @@
        }
    }
    		/* Overlay container */
-		.overlay-container {
+		.overlay{
 			width: 60%;
 			height: 60%;
 			background-image: url('/images/logo_main.png');
@@ -108,7 +108,7 @@
 		}
 
 		/* Hide overlay and show content when loaded */
-		.loaded .overlay-container {
+		.loaded .overlay {
 			opacity: 0;
 		}
 
